@@ -40,6 +40,12 @@ const experience = [
     detail: 'Handled social media, content creation, graphic design, photography, advertising support, layouts, and book editing.',
   },
 ];
+
+const certifications = [
+  { title: 'Programming for Beginners Using Python', issuer: 'DICT · June 26, 2024', image: '/certifications/dict-python.png' },
+  { title: 'Introduction to Computer Systems Servicing', issuer: 'TESDA · August 6, 2026', image: '/certifications/tesda-computer-systems-servicing.png' },
+  { title: 'Introduction to Critical Infrastructure Protection', issuer: 'OPSWAT Academy · January 16, 2025', image: '/certifications/opswat-critical-infrastructure-protection.png' },
+];
 ---
 
 <html lang="en">
@@ -58,6 +64,7 @@ const experience = [
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="header-link" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
@@ -71,7 +78,7 @@ const experience = [
           <p class="hero-intro">I'm Jerusa Mae P. Abalos, an Information Systems graduate and Magna Cum Laude developer who turns operational requirements into practical, dependable web and business systems.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="#about">More about me <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="/Jerusa-Mae-Abalos_CV2026_v2.pdf" download>Download my CV <span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="hero-note" aria-label="Introduction note">
@@ -125,7 +132,21 @@ const experience = [
 
       <section id="skills" class="section container skills-grid">
         <div class="section-label"><span>04</span><span>What I do</span></div>
-        <div><h2>Useful skills for<br /><em>complex problems.</em></h2><div class="skill-list">{skills.map((skill, index) => <div><span>0{index + 1}</span><strong>{skill}</strong><i>↗</i></div>)}</div><div class="credentials"><p class="eyebrow">Education & credentials</p><p><strong>BS Information Systems</strong><br />Dr. Filemon C. Aguilar Memorial College of Las Piñas – IT Campus · 2020–2024 · Magna Cum Laude</p><p><strong>Certifications</strong><br />CSC Honor Graduate Eligibility · TESDA Introduction to Computer Systems Servicing · OPSWAT Introduction to Critical Infrastructure Protection · DICT Basic Programming Using Python</p></div></div>
+        <div><h2>Useful skills for<br /><em>complex problems.</em></h2><div class="skill-list">{skills.map((skill, index) => <div><span>0{index + 1}</span><strong>{skill}</strong><i>↗</i></div>)}</div><div class="credentials"><p class="eyebrow">Education & credentials</p><p><strong>BS Information Systems</strong><br />Dr. Filemon C. Aguilar Memorial College of Las Piñas – IT Campus · 2020–2024 · Magna Cum Laude</p><p><strong>Certifications</strong><br />CSC Honor Graduate Eligibility · TESDA Introduction to Computer Systems Servicing · OPSWAT Introduction to Critical Infrastructure Protection · DICT Basic Programming Using Python</p><a class="text-link" href="/Jerusa-Mae-Abalos_CV2026_v2.pdf" download>Download the full CV <span aria-hidden="true">↓</span></a></div></div>
+      </section>
+
+      <section id="certifications" class="section section-tint certifications-section">
+        <div class="container">
+          <div class="section-heading"><div class="section-label"><span>05</span><span>Certifications</span></div><p>Credentials earned through continued learning.</p></div>
+          <div class="certification-grid">
+            {certifications.map((certification) => (
+              <article class="certification-card">
+                <a href={certification.image} target="_blank" rel="noreferrer"><img src={certification.image} alt={`${certification.title} certificate`} loading="lazy" /></a>
+                <div><p class="certification-issuer">{certification.issuer}</p><h3>{certification.title}</h3><a class="text-link" href={certification.image} target="_blank" rel="noreferrer">View certificate <span aria-hidden="true">↗</span></a></div>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section id="contact" class="contact-section">
@@ -155,7 +176,7 @@ const experience = [
   .section { padding: 145px 0; }.about-grid, .skills-grid { display: grid; grid-template-columns: 180px 1fr; gap: 90px; }.section-label { display: flex; gap: 20px; color: #88928e; }.section-label span:first-child { color: #e66b4d; }.about-content { max-width: 700px; }.about-content h2, .skills-grid h2 { margin-top: 0; }.large-copy { color: #3e4c48; font-size: 1.27rem; line-height: 1.65; }.about-content > p:not(.large-copy) { max-width: 590px; color: #7a8581; font-size: .95rem; line-height: 1.8; }.about-facts { display: flex; gap: 48px; margin-top: 60px; padding-top: 24px; border-top: 1px solid #dfe4e3; }.about-facts div { display: flex; flex-direction: column; gap: 10px; }.about-facts strong { color: #e66b4d; font-family: 'DM Mono', monospace; font-size: .7rem; }.about-facts span { color: #5c6864; font-size: .78rem; }
   .section-tint { background: #eef2f0; }.section-heading { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 66px; }.section-heading > p { color: #7b8582; font-size: .9rem; }.project-list { border-top: 1px solid #cdd6d2; }.project-card { display: grid; grid-template-columns: 90px 1fr 50px; gap: 20px; align-items: start; padding: 42px 0; border-bottom: 1px solid #cdd6d2; }.project-number, .project-type { color: #e66b4d; font-family: 'DM Mono', monospace; font-size: .7rem; }.project-info h3 { max-width: 600px; margin: 10px 0 18px; }.project-info > p:not(.project-type) { max-width: 650px; color: #687570; font-size: .92rem; line-height: 1.7; }.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }.tags span { padding: 7px 10px; border: 1px solid #cad4d0; color: #687570; font-family: 'DM Mono', monospace; font-size: .61rem; }.project-arrow { justify-self: end; color: #e66b4d; font-size: 1.6rem; }.project-card:hover h3 { color: #e66b4d; }.project-card.featured { padding-top: 50px; }
   .skill-list { margin-top: 50px; border-top: 1px solid #dfe4e3; }.skill-list div { display: grid; grid-template-columns: 55px 1fr 25px; gap: 20px; align-items: center; padding: 19px 0; border-bottom: 1px solid #dfe4e3; }.skill-list span { color: #e66b4d; font-family: 'DM Mono', monospace; font-size: .65rem; }.skill-list strong { font-size: .95rem; font-weight: 500; }.skill-list i { color: #9aa49f; font-style: normal; }
-  .experience-section { padding-top: 0; }.experience-list { border-top: 1px solid #dfe4e3; }.experience-item { display: grid; grid-template-columns: 220px 1fr; gap: 35px; padding: 34px 0; border-bottom: 1px solid #dfe4e3; }.experience-period { color: #e66b4d; font-family: 'DM Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }.experience-item h3 { margin-bottom: 10px; }.experience-company { color: #3e4c48; font-size: .9rem; font-weight: 600; }.experience-detail { max-width: 650px; margin-bottom: 0; color: #7a8581; font-size: .9rem; line-height: 1.7; }.credentials { margin-top: 55px; padding-top: 28px; border-top: 1px solid #dfe4e3; }.credentials .eyebrow { margin-bottom: 22px; }.credentials p:not(.eyebrow) { max-width: 650px; color: #7a8581; font-size: .86rem; line-height: 1.7; }.credentials strong { color: #3e4c48; }
+  .experience-section { padding-top: 0; }.experience-list { border-top: 1px solid #dfe4e3; }.experience-item { display: grid; grid-template-columns: 220px 1fr; gap: 35px; padding: 34px 0; border-bottom: 1px solid #dfe4e3; }.experience-period { color: #e66b4d; font-family: 'DM Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }.experience-item h3 { margin-bottom: 10px; }.experience-company { color: #3e4c48; font-size: .9rem; font-weight: 600; }.experience-detail { max-width: 650px; margin-bottom: 0; color: #7a8581; font-size: .9rem; line-height: 1.7; }.credentials { margin-top: 55px; padding-top: 28px; border-top: 1px solid #dfe4e3; }.credentials .eyebrow { margin-bottom: 22px; }.credentials p:not(.eyebrow) { max-width: 650px; color: #7a8581; font-size: .86rem; line-height: 1.7; }.credentials strong { color: #3e4c48; }.certifications-section { padding-top: 110px; }.certification-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }.certification-card { min-width: 0; }.certification-card > a { display: block; overflow: hidden; background: #fff; border: 1px solid #dfe4e3; }.certification-card img { display: block; width: 100%; aspect-ratio: 1.42; object-fit: cover; transition: transform .3s ease; }.certification-card > a:hover img { transform: scale(1.03); }.certification-card h3 { margin: 8px 0 14px; font-size: 1.25rem; }.certification-issuer { margin: 22px 0 0; color: #e66b4d; font-family: 'DM Mono', monospace; font-size: .65rem; text-transform: uppercase; letter-spacing: .08em; }
   .contact-section { color: #f7f8fb; background: #1c2825; }.contact-inner { padding: 125px 0; }.contact-inner h2 { margin: 22px 0 40px; }.contact-inner .eyebrow { color: #aebbb5; }.contact-inner h2 em { color: #e66b4d; }.contact-note { display: inline-block; margin-left: 20px; color: #8b9892; font-size: .72rem; }.site-footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px 0; color: #8b9692; font-family: 'DM Mono', monospace; font-size: .62rem; text-transform: uppercase; letter-spacing: .06em; }
-  @media (max-width: 720px) { .container, .site-header { width: min(100% - 40px, 1120px); }.site-header { height: 70px; }.site-header nav { display: none; }.header-link { font-size: .7rem; }.hero { min-height: 0; padding: 90px 0 100px; }.hero-note { display: none; } h1 { font-size: clamp(3.4rem, 16vw, 5.5rem); }.hero-actions { align-items: flex-start; flex-direction: column; gap: 23px; }.section { padding: 90px 0; }.about-grid, .skills-grid { display: block; }.section-label { margin-bottom: 55px; }.about-content h2, .skills-grid h2 { margin-bottom: 35px; }.about-facts { flex-direction: column; gap: 20px; }.experience-item { display: block; }.experience-period { margin-bottom: 18px; }.section-heading { display: block; margin-bottom: 42px; }.section-heading > p { margin-top: 25px; }.project-card { grid-template-columns: 45px 1fr 20px; gap: 10px; padding: 32px 0; }.project-info h3 { font-size: 1.5rem; }.project-arrow { font-size: 1.2rem; }.contact-inner { padding: 90px 0; }.contact-note { display: block; margin: 18px 0 0; line-height: 1.6; }.site-footer { align-items: flex-start; flex-direction: column; line-height: 1.6; } }
+  @media (max-width: 720px) { .container, .site-header { width: min(100% - 40px, 1120px); }.site-header { height: 70px; }.site-header nav { display: none; }.header-link { font-size: .7rem; }.hero { min-height: 0; padding: 90px 0 100px; }.hero-note { display: none; } h1 { font-size: clamp(3.4rem, 16vw, 5.5rem); }.hero-actions { align-items: flex-start; flex-direction: column; gap: 23px; }.section { padding: 90px 0; }.about-grid, .skills-grid { display: block; }.section-label { margin-bottom: 55px; }.about-content h2, .skills-grid h2 { margin-bottom: 35px; }.about-facts { flex-direction: column; gap: 20px; }.experience-item { display: block; }.experience-period { margin-bottom: 18px; }.certification-grid { grid-template-columns: 1fr; }.section-heading { display: block; margin-bottom: 42px; }.section-heading > p { margin-top: 25px; }.project-card { grid-template-columns: 45px 1fr 20px; gap: 10px; padding: 32px 0; }.project-info h3 { font-size: 1.5rem; }.project-arrow { font-size: 1.2rem; }.contact-inner { padding: 90px 0; }.contact-note { display: block; margin: 18px 0 0; line-height: 1.6; }.site-footer { align-items: flex-start; flex-direction: column; line-height: 1.6; } }
 </style>
